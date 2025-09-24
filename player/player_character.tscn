@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdbgbrrant3pl"]
+
+[ext_resource type="Script" uid="uid://dcg3mceic0m1w" path="res://player/player_main_camera_2d.gd" id="1_6ahhe"]
+[ext_resource type="Script" uid="uid://hndgsqg7pkke" path="res://player/player_character_body_2d.gd" id="2_ni121"]
+[ext_resource type="Texture2D" uid="uid://c0npvxvqwjjke" path="res://atlases/asasin.png" id="2_tncax"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tncax"]
+radius = 19.0
+height = 74.0
+
+[node name="PlayerCharacter" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_ni121")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_tncax")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(9.53674e-07, 4.76837e-07)
+scale = Vector2(0.341797, 0.359375)
+texture = ExtResource("2_tncax")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+script = ExtResource("1_6ahhe")
+
+[node name="DashTimer" type="Timer" parent="Player"]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashCalldown" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="AttackCalldown" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="MultijumpTimer" type="Timer" parent="Player"]
+wait_time = 0.5
+one_shot = true

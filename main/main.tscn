@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://covdhifilvoeu"]
+
+[ext_resource type="PackedScene" uid="uid://dgmu55m4cl36f" path="res://procedural_world/procedural_world.tscn" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://cdbgbrrant3pl" path="res://player/player_character.tscn" id="2_xwkvk"]
+[ext_resource type="TileSet" uid="uid://bhifhvcgiqqc3" path="res://procedural_world/procedural_world1.tres" id="3_xwkvk"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ProceduralWorld" parent="." instance=ExtResource("1_pjrb6")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_xwkvk")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 255, 255, 3, 0, 7, 0, 9, 0, 2, 0, 0, 0, 0, 0, 3, 0, 7, 0, 12, 0, 2, 0, 0, 0)
+tile_set = ExtResource("3_xwkvk")
